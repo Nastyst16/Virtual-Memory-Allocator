@@ -1,0 +1,77 @@
+#Copyright© 2023 Nastase Cristian-Gabriel 315CAa
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    O sa incep acest README prin a-mi cere scuze
+ca nu am respectat notiunea de genericitate;
+    M-am apucat foarte devreme de tema si nu am
+avut cu cine sa ma sfatuiesc in legatura cu acest
+detaliu. Am inteles cerinta prost si credeam ca
+doar tipul de date stocate trebuie sa fie generic.
+Ma rog. Nu exista scuze.
+    In momentul in care am constientizat greseala,
+era deja prea tarziu, intrucat tema mea era 2/3
+terminata.
+    Imi asum greseala si nerespectarea cerintei.
+Consider ca cele 20 de puncte pierdute ma va face
+ca pe viitor sa fiu mai atent si sa cer mai multe
+sfaturi.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        ---- Virtual Memory Allocator ----
+
+    The code starts with a while that scans from stdin commands until
+"DEALLOC_ARENA" is called.
+    This project contains the following commands:
+
+    1. ALLOC_ARENA: there "alloc_arena" function is called, which
+allocs the kernel buffer.
+
+    2. DEALLOC_ARENA: there "dealloc_arena" function is called.
+The function is freeing continuously the first miniblock from
+the arena, until it is empty.
+
+    3. ALLOC_BLOCK: allocs blocks & miniblocks depending on the input
+address. In this command, the "alloc_block" function is called. This
+functions contains 7 "ifs" that are verifying every case a block &
+miniblock can be introduced in the arena. For every case, there is also
+a function with a suggestive name. These functions contains all the
+instructions and atributions that are necessary for the correctness of the code:
+        -> "alloc_empty_block_list"
+        -> "alloc_begin_bl_list"
+        -> "alloc_end_bl_list"
+        -> "alloc_merge_bl"
+        -> "alloc_between_bl"
+        -> "alloc_end_bl"
+        -> "alloc_begin_bl"
+        -> "alloc_block_errors"
+        -> "create_miniblock"
+
+    4. FREE_BLOCK command which frees blocks & miniblock depending on the
+input address. In this command, the "free_block" function is called. This
+function contains 4 "ifs" that are verifying every case a block & miniblock
+is freed. For every case, there is also a function with a suggestive name.
+These functions contains all the instructions and atributions that are
+necesarry for the correctness of the code:
+        -> "free_bl_with_1miniblock"
+        -> "free_middle_bl"
+        -> "free_begin_bl"
+        -> "free_end_bl"
+
+    5. READ: here "read" function is called. In the function we go through
+the arena moving block by block, miniblock by miniblock, trying to find the
+corresponding miniblock. Once we find it we are reading out the requested
+information and printing it on the screen.
+
+    6. WRITE: here "write" function is called. This function is based on the
+same principle as "read" from above.
+
+    7. PMAP: here "pmap" function is called. Now we go through all of the
+arena and print every information about the blocks and miniblocks
+(number of the block/miniblock, the zone that is covers, permissions).
+
+    8. MPROTECT: here "mprotect" function is called. Same principle. We go
+through the arena block by block, miniblock by miniblock. When we find the
+miniblock, we make the changes to the permissions.
+
+    This homework was a beautifull task.

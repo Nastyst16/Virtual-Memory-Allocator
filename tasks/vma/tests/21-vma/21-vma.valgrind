@@ -1,0 +1,15 @@
+==14009== Memcheck, a memory error detector
+==14009== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14009== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14009== Command: /mnt/c/Users/crist/Desktop/An1_Sem2/sd/1_Tema/An1/vma
+==14009== Parent PID: 14008
+==14009== 
+==14009== 
+==14009== HEAP SUMMARY:
+==14009==     in use at exit: 0 bytes in 0 blocks
+==14009==   total heap usage: 20 allocs, 20 frees, 1,598 bytes allocated
+==14009== 
+==14009== All heap blocks were freed -- no leaks are possible
+==14009== 
+==14009== For lists of detected and suppressed errors, rerun with: -s
+==14009== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
